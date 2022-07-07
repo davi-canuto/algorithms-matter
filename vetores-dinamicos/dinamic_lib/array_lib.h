@@ -1,5 +1,5 @@
-#ifndef _ARRAY_LIST_INT_H_
-#define _ARRAY_LIST_INT_H_
+#ifndef __ARRAY_LIST_H__
+#define __ARRAY_LIST_H__
 
 typedef struct array_list_int array_list_int;
 
