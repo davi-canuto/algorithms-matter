@@ -5,7 +5,7 @@ typedef struct array_list_int array_list_int;
 
 array_list_int * array_list_create();
 
-int array_list_get(array_list_int * list, int index, int *error);
+int array_list_get(array_list_int * list, int index);
 
 unsigned int array_list_push_back(array_list_int * list, int i);
 

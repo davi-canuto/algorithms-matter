@@ -6,7 +6,13 @@ struct linked_node_int {
   struct linked_node_int *next;
 };
 
-linked_node_int * array_list_create(){
+struct ll_int{
+  struct linked_node_int *first;
+  struct linked_node_int *last;
+  unsigned int size;
+};
+
+linked_node_int * linked_list_create(){
   // Allocate memory space for a pointer of type ll_int
   struct ll_int *new_list=(struct ll_int*)malloc(sizeof(struct ll_int));
 
@@ -21,14 +27,19 @@ linked_node_int * array_list_create(){
 }
 
 void linked_list_push(struct ll_int *list, int x){
+  // Allocate memory space for a pointer new_node
   struct linked_node_int *new_node = (struct linked_node_int*)malloc(sizeof(struct linked_node_int));
 
+  // Assign x to new_node value
   new_node->value = x;
 
+  // Assignt the next value the node as empty
   new_node->next = list->first;
 
+  // Assign the first element of the list to the new node
   list->first = new_node;
 
+  // Added 1 to a list size
   list->size++;
 }
 
@@ -36,22 +47,22 @@ unsigned int linked_list_size(struct ll_int *list){
   return list->size;
 }
 
-int linked_list_get(struct ll_int *list, int ind, int *error){
+int linked_list_get(struct ll_int *list, int ind){
   int i;
-  *error = 1;
-
+  // Checks if the index passed exceeds the size of the list
   if(ind >= list->size){
     return -1;
   }
 
+  // Assigns pointer to current a first element in the list
   struct linked_node_int *current = list->first;
 
+  // It loops through the list passing the first element pointer to the current
   for(i=0; i<ind; i++){
     current = current->next;
   }
 
-  *error=0;
-
+  // Return the current value
   return current->value;
 }
 
@@ -66,7 +77,7 @@ unsigned int linked_list_pop_back(struct ll_int *list){
   if(list->first == 0){
     return 1;
   }
-  int r = list->last->value;
+  list->last->value;
   struct ll_int *new_last = list->first;
   struct linked_node_int *n = new_last;
   while (n->next != list->last){

@@ -39,16 +39,9 @@ unsigned int array_list_size(array_list_int * arr){
   return (*arr).size;
 }
 
-int array_list_get(array_list_int * arr, int index, int *error){
-  // Changes the error memory space to 1
-  *error = 1;
-
+int array_list_get(array_list_int * arr, int index){
   // Performs the assignment of the value variable and the value content
   int value = (*arr).data[index];
-
-  // Changes the error memory space to 0
-  *error = 0;
-
   return value;
 }
 
@@ -76,7 +69,7 @@ int array_list_find(array_list_int * arr, int element){
   return ind;
 }
 
-unsigned int array_list_insert_at(array_list_int * arr, int index, int value){
+unsigned int array_list_insert_at(array_list_int *arr, int index, int value){
 
   // Checks if array capacity has been reached
   if((*arr).size == (*arr).capacity){
