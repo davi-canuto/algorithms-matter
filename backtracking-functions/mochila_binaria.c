@@ -6,7 +6,7 @@ struct item{
   double valor;
 };
 
-typedef struct item item;
+typedef struct item item; // oque antes era *struct item variavel* agora é *item váriavel* por conta do typedef struct
 
 int main(void){
   int i, n, cap;
