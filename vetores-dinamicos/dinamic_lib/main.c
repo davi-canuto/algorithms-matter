@@ -3,7 +3,7 @@
 #include "array_lib.h"
 
 int main(){
- struct array_list_int *dinamic_arr = array_list_create();
+  struct array_list_int *dinamic_arr = array_list_create();
   int i,ind_for_get = 29, value_for_index = 145;
 
   for (i=0; i<30; ++i){

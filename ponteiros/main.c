@@ -1,14 +1,17 @@
 #include <stdio.h>
 
 int main(void) {
-  int x;
-  x = 10;
+  int i, a[5], *p;
 
-  int *ponteiro; // ponteiro aponta para um endereço de memória
-  ponteiro = &x; // ponteiro agora aponta para o endereço de memória x
+  for( i=0; i<5; ++i){
+    a[i] = i*2+3;
+  }
+  p = a;
 
-  printf("%i\n", *ponteiro); // imprime o valor contido no endereço de memória X que é onde o ponteiro aponta
-  printf("%i\n", ponteiro); // imprime o endereço de memória da váriavel ponteiro que é um ponteiro
+  for( i=0 ; i<5; ++i){
+    printf("%d ", *p++);
+  }
 
+  printf("\n");
   return 0;
 }
