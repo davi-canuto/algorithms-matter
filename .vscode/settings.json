@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.axlsx": "ruby",
+    "*.json": "ruby",
+    "stdio.h": "c"
+  }
+}

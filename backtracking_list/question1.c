@@ -1,7 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
 
 int main(void){
   int x;
@@ -15,9 +12,14 @@ int main(void){
 }
 
 int qtd_occurrences(int x,long long int number){
-  if (number == 0)
-    return 0;
-  else
-    return (number % 10 == x) + qtd_occurrences(number / 10, x);
+  if (number == 0) return 0;
+
+  int lastDigit = number % 10;
+  int count = qtd_occurrences(x, number / 10);
+
+  if (lastDigit == x)
+       count++;
+
+  return count;
 }
 
